@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title rails-bestpractices.com
+    = stylesheet_link_tag "compiled/screen", "compiled/formtastic", :cache => true
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+  %body
+    - if !current_user
+      = link_to "Register", new_account_path
+      = link_to "Log In", new_user_session_path
+    - else
+      = link_to "My Account", account_path
+      = link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you want to logout?"
+
+    .flash
+      - flash.each do |type, message|
+        .message{:class => type}
+          %p= message
+    .container
+      = yield
