@@ -81,6 +81,9 @@ body {
 #content, #sidebar {
   background-color: #fff;
   @include border-radius(0.5em);
+  h2 {
+    margin: 0.5em 1em;
+  }
 }
 #footer {
   border-top: 0.2em solid #999;

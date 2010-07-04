@@ -12,3 +12,14 @@ The following style may be *conditionally* included for improved support on olde
 form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 
 --------------------------------------------------------------------------------------------------*/
+form#new_user, form#new_user_session {
+  label {
+    margin-left: 10em;
+  }
+  input {
+    max-width: 13em;
+  }
+  li.commit {
+    margin-left: 10em;
+  }
+}
