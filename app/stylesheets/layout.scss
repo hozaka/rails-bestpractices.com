@@ -1,0 +1,88 @@
+@import "blueprint";
+@import "compass/utilities/lists/bullets";
+@import "compass/utilities/links/hover-link";
+@import "compass/utilities/links/link-colors";
+@import "compass/utilities/general/float";
+@import "compass/css3/border-radius";
+@import "compass/css3/inline-block";
+@import "compass/utilities/general/clearfix";
+
+body {
+  background-color: #619144;
+  #container a {
+    @include hover-link;
+  }
+}
+#header {
+  margin: 2em 0;
+  padding: 2em 0;
+  background-color: #fff;
+  @include border-radius(1em);
+  h1 {
+    @include column(9);
+    @include prepend(1);
+    a {
+      @include link-colors(#000000);
+      font-weight: bold;
+    }
+  }
+  .secondary-nav {
+    @include column(23);
+    @include last;
+    ul {
+      @include float-right;
+      @include no-bullets;
+      margin: 0;
+      li {
+        @include float-left;
+        margin: 0 5px;
+        background-color: #91CA23;
+        @include border-top-left-radius(0.5em);
+        @include border-top-right-radius(0.5em);
+        a {
+          font-size: 1.25em;
+          color: #fff;
+          padding: 0 1em;
+          line-height: 2em;
+          @include link-colors(#ffffff);
+          @include inline-block;
+        }
+      }
+    }
+  }
+  .primary-nav {
+    @include column(23);
+    @include pull(-0.5);
+    background-color: #444243;
+    @include border-radius(0.5em);
+    ul {
+      @include no-bullets;
+      margin: 0;
+      padding: 0.5em 1em;
+      @include clearfix;
+      li {
+        background-color: #91CA23;
+        @include border-radius(0.5em);
+        @include float-left;
+        a {
+          font-size: 1.25em;
+          color: #fff;
+          padding: 0.2em 1em;
+          @include inline-block;
+          :hover, .active {
+            background-color: #444243;
+            color: #91CA23;
+          }
+        }
+      }
+    }
+  }
+}
+#content, #sidebar {
+  background-color: #fff;
+  @include border-radius(0.5em);
+}
+#footer {
+  border-top: 0.2em solid #999;
+  margin: 2em 0;
+}
