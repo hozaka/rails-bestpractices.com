@@ -2,7 +2,7 @@
 %html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
   %head
     %title rails-bestpractices.com
-    = stylesheet_link_tag 'compiled/screen', 'compiled/layout', 'compiled/formtastic', 'compiled/formtastic_changes', :cache => true, :media => 'screen, projection'
+    = stylesheet_link_tag 'compiled/screen', 'compiled/layout', 'compiled/post', 'compiled/formtastic', 'compiled/formtastic_changes', :cache => true, :media => 'screen, projection'
     = stylesheet_link_tag 'compiled/print.css', :media => 'print'
     /[if IE]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
@@ -11,24 +11,31 @@
     #container
       #header
         %h1= link_to 'Rails Best Practices', root_path
-        .secondary-nav
+        .nav
           %ul
+            %li= link_to "Home", root_path
             - if !current_user
               %li= link_to "Register", new_account_path
               %li= link_to "Log In", new_user_session_path
             - else
+              %li= link_to 'Submit', new_post_path, :class => 'highlight'
               %li= link_to current_user.login, account_path
               %li= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you want to logout?"
-        .primary-nav
-          %ul
-            %li= link_to 'Home', root_path
 
       .flash
         - flash.each do |type, message|
-          .message{:class => type}
-            %p= message
+          .message{:class => type}= message
       #sidebar
-        Sidebar
+        .section
+          %h3 Navigation
+          %ul
+            %li= link_to 'Recent Best Practices', recent_posts_url
+            %li= link_to 'Hot Best Practices', hot_posts_url
+            %li= link_to 'All Best Practices', posts_url
+            %li= link_to 'About rails-bestpractices', '#'
+            %li= link_to 'Feed', '#'
+        .section
+          %h3 Tags
       #content
         = yield
       #footer

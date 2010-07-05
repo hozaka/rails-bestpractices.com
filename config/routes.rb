@@ -1,4 +1,9 @@
 RailsBestpracticesCom::Application.routes.draw do |map|
+  resources :posts do
+    get :recent, :on => :collection
+    get :hot, :on => :collection
+  end
+
   resource :account, :controller => 'users'
 
   resources :users

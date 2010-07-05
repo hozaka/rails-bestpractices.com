@@ -1,11 +1,13 @@
 class ApplicationController < ActionController::Base
   include InheritedResources::DSL
+  include Userstamp
+
   protect_from_forgery
   layout 'application'
 
   helper_method :current_user_session, :current_user
   
-  private
+  protected
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
       @current_user_session = UserSession.find

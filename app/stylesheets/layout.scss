@@ -8,81 +8,75 @@
 @import "compass/utilities/general/clearfix";
 
 body {
-  background-color: #619144;
+  background-color: #EEE;
+  color: #111;
   #container a {
     @include hover-link;
   }
 }
 #header {
   margin: 2em 0;
-  padding: 2em 0;
-  background-color: #fff;
-  @include border-radius(1em);
   h1 {
     @include column(9);
-    @include prepend(1);
     a {
-      @include link-colors(#000000);
+      @include link-colors(#111);
       font-weight: bold;
     }
   }
-  .secondary-nav {
-    @include column(23);
+  .nav {
+    background-color: #fff;
+    padding: 1em 0;
+    @include column(15);
     @include last;
+    @include border-radius(1em);
     ul {
       @include float-right;
       @include no-bullets;
       margin: 0;
       li {
         @include float-left;
-        margin: 0 5px;
-        background-color: #91CA23;
         @include border-top-left-radius(0.5em);
         @include border-top-right-radius(0.5em);
         a {
           font-size: 1.25em;
-          color: #fff;
-          padding: 0 1em;
+          padding: 0 0.5em;
           line-height: 2em;
-          @include link-colors(#ffffff);
+          @include link-colors(#2276BB);
           @include inline-block;
-        }
-      }
-    }
-  }
-  .primary-nav {
-    @include column(23);
-    @include pull(-0.5);
-    background-color: #444243;
-    @include border-radius(0.5em);
-    ul {
-      @include no-bullets;
-      margin: 0;
-      padding: 0.5em 1em;
-      @include clearfix;
-      li {
-        background-color: #91CA23;
-        @include border-radius(0.5em);
-        @include float-left;
-        a {
-          font-size: 1.25em;
-          color: #fff;
-          padding: 0.2em 1em;
-          @include inline-block;
-          :hover, .active {
-            background-color: #444243;
-            color: #91CA23;
+          &.highlight {
+            background-color: #fff;
+            font-weight: bold;
+            @include link-colors(#FFCC00);
           }
         }
       }
     }
   }
 }
+.flash {
+  @include column(24);
+}
 #content, #sidebar {
   background-color: #fff;
   @include border-radius(0.5em);
   h2 {
     margin: 0.5em 1em;
+  }
+}
+#sidebar {
+  h3 {
+    margin: 0.5em;
+  }
+  ul {
+    padding: 0;
+    margin: 1em;
+    @include no-bullets;
+    li {
+      a {
+        font-size: 1em;
+        @include link-colors(#2276BB);
+      }
+    }
   }
 }
 #footer {
