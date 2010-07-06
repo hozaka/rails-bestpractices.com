@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   include InheritedResources::DSL
-  include Userstamp
 
   protect_from_forgery
   layout 'application'

@@ -34,16 +34,22 @@ gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "
 gem "formtastic", :git => "git://github.com/justinfrench/formtastic.git", :branch => "rails3"
 gem "inherited_resources", ">= 1.1.2"
 gem "exception_notification", :git => "git://github.com/rails/exception_notification.git"
-gem "userstamp", ">= 2.0.0"
+gem "RedCloth"
+gem "rdiscount"
+
 gem "mongrel", :group => :development
+
 gem "autotest-rails", ">= 4.1.0", :group => :test
-gem "factory_girl_rails", ">= 1.0.0", :group => :test
-gem "capybara", :group => :test
-gem "database_cleaner", :group => :test
-gem "cucumber-rails", :group => :test
-gem "cucumber", :group => :test
-gem "rspec-rails", ">= 2.0.0.beta.12", :group => :test
 gem "rspec", ">= 2.0.0.beta.12", :group => :test
-gem "spork", :group => :test
-gem "launchy", :group => :test
-gem "pickle", :git => "git://github.com/codegram/pickle.git", :group => :test
+gem "rspec-rails", ">= 2.0.0.beta.12", :group => :test
+gem "factory_girl_rails", ">= 1.0.0", :group => :test
+gem "remarkable_activerecord", "3.1.13", :group => :test
+gem 'remarkable_rails', "3.1.13", :group => :test
+
+gem "cucumber", :group => :cucumber
+gem "cucumber-rails", :group => :cucumber
+gem "capybara", :group => :cucumber
+gem "database_cleaner", :group => :cucumber
+gem "spork", :group => :cucumber
+gem "launchy", :group => :cucumber
+gem "pickle", :git => "git://github.com/codegram/pickle.git", :group => :cucumber

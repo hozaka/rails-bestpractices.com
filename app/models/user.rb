@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
   acts_as_authentic
-  model_stamper
+  
+  has_many :posts
 end
