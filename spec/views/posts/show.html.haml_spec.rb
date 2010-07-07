@@ -5,8 +5,7 @@ describe "posts/show.html.haml" do
     view.stub(:current_user).and_return(Factory.build(:user_flyerhzm))
     @post = assign(:post, stub_model(Post,
       :title => "Title",
-      :body => "MyText",
-      :formatted_html => "<p>MyText</p>"
+      :body => "MyText"
     ))
   end
 

@@ -35,8 +35,6 @@ gem "formtastic", :git => "git://github.com/justinfrench/formtastic.git", :branc
 gem "has_scope", ">= 0.5.0"
 gem "inherited_resources", ">= 1.1.2"
 gem "exception_notification", :git => "git://github.com/rails/exception_notification.git"
-gem "RedCloth"
-gem "rdiscount"
 gem "acts-as-taggable-on", ">= 2.0.6"
 
 gem "mongrel", :group => :development

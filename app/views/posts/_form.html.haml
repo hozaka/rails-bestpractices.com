@@ -1,8 +1,9 @@
 = f.inputs do
   = f.input :title, :label => 'Title'
-  = f.input :body_format, :as => :radio, :collection => Post::FORMATTER.keys, :label => 'Content Format'
   = f.input :body, :label => 'Content'
+  .wmd-preview
   = f.input :tag_list
 
 :javascript
   var tags = #{all_tags};
+= javascript_include_tag 'wmd'
