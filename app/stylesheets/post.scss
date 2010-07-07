@@ -1,8 +1,35 @@
-form#new_post {
+@import "compass/utilities/links/link-colors";
+@import "compass/utilities/general/float";
+@import "compass/css3/inline-block";
+
+.formtastic.post {
   margin: 1em 2em;
   label {
     font-weight: bold;
     float: none;
     font-size: 1.2em;
+    color: #111;
   }
+  #post_body_format_input ol li {
+    @include float-left;
+    margin-right: 1em;
+  }
+}
+#content .command {
+  @include float-right;
+  margin: 2em 1em 0 0;
+  a {
+    @include inline-block;
+  }
+}
+.wikistyle {
+  margin: 1em 2em;
+  pre code {
+    background-color: #F8F8FF;
+    border: medium none;
+    padding: 0;
+  }
+}
+.posts {
+  margin: 2em;
 }

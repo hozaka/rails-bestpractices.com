@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe User do
-  should_has_many :posts
+  should_have_many :posts
   
   it "should succeed creating a new :valid_user from the Factory" do
     Factory.create(:user_flyerhzm)

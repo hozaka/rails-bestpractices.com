@@ -32,6 +32,7 @@ gem "compass", ">= 0.10.2"
 gem "will_paginate", :git => "git://github.com/mislav/will_paginate.git", :branch => "rails3"
 gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "rails3"
 gem "formtastic", :git => "git://github.com/justinfrench/formtastic.git", :branch => "rails3"
+gem "has_scope", ">= 0.5.0"
 gem "inherited_resources", ">= 1.1.2"
 gem "exception_notification", :git => "git://github.com/rails/exception_notification.git"
 gem "RedCloth"
@@ -43,8 +44,7 @@ gem "autotest-rails", ">= 4.1.0", :group => :test
 gem "rspec", ">= 2.0.0.beta.12", :group => :test
 gem "rspec-rails", ">= 2.0.0.beta.12", :group => :test
 gem "factory_girl_rails", ">= 1.0.0", :group => :test
-gem "remarkable_activerecord", "3.1.13", :group => :test
-gem 'remarkable_rails', "3.1.13", :group => :test
+gem 'remarkable_activerecord', '>= 4.0.0.alpha2', :group => :test
 
 gem "cucumber", :group => :cucumber
 gem "cucumber-rails", :group => :cucumber

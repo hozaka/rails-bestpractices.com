@@ -16,7 +16,6 @@ describe "posts/index.html.haml" do
 
   it "renders a list of posts" do
     render
-    rendered.should have_selector("tr>td", :content => "Title".to_s, :count => 2)
-    rendered.should have_selector("tr>td", :content => "MyText".to_s, :count => 2)
+    rendered.should have_selector("div.post a", :content => "Title".to_s, :count => 2)
   end
 end

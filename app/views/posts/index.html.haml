@@ -1,0 +1,5 @@
+%h2 Rails Best Practices
+.posts
+  - @posts.each do |post|
+    .post
+      .title= link_to post.title, post_path(post)

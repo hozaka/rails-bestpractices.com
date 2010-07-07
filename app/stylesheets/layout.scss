@@ -12,6 +12,7 @@ body {
   color: #111;
   #container a {
     @include hover-link;
+    @include link-colors(#2276BB);
   }
 }
 #header {
@@ -41,7 +42,6 @@ body {
           font-size: 1.25em;
           padding: 0 0.5em;
           line-height: 2em;
-          @include link-colors(#2276BB);
           @include inline-block;
           &.highlight {
             background-color: #fff;
@@ -74,7 +74,6 @@ body {
     li {
       a {
         font-size: 1em;
-        @include link-colors(#2276BB);
       }
     }
   }

@@ -1,0 +1,7 @@
+%h2 Edit a Rails Best Practice
+
+= semantic_form_for @post do |form|
+  = render :partial => 'form', :locals => {:f => form}
+  = form.buttons do
+    = form.commit_button
+    = link_to 'Back', post_path(@post)

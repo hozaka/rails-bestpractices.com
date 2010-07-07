@@ -2,8 +2,6 @@
   = f.input :title, :label => 'Title'
   = f.input :body_format, :as => :radio, :collection => Post::FORMATTER.keys, :label => 'Content Format'
   = f.input :body, :label => 'Content'
-= f.buttons do
-  = f.commit_button
   
 :javascript
   jQuery(function() {

@@ -1,0 +1,5 @@
+- if @post.belongs_to? current_user
+  .command
+    = link_to 'Edit', edit_post_path(@post)
+%h2= @post.title
+.wikistyle= raw @post.formatted_html
