@@ -2,8 +2,7 @@
   = f.input :title, :label => 'Title'
   = f.input :body_format, :as => :radio, :collection => Post::FORMATTER.keys, :label => 'Content Format'
   = f.input :body, :label => 'Content'
-  
+  = f.input :tag_list
+
 :javascript
-  jQuery(function() {
-    $('#post_body_format_markdown').attr('checked', 'checked');
-  });
+  var tags = #{all_tags};

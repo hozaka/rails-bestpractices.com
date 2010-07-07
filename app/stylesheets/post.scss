@@ -2,8 +2,10 @@
 @import "compass/utilities/general/float";
 @import "compass/css3/inline-block";
 
-.formtastic.post {
+.formtastic.post, .posts, .tags {
   margin: 1em 2em;
+}
+.formtastic.post {
   label {
     font-weight: bold;
     float: none;
@@ -30,6 +32,7 @@
     padding: 0;
   }
 }
-.posts {
-  margin: 2em;
+div.ac_results ul {
+  margin: 0;
+  padding: 0;
 }

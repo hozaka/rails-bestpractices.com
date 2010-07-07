@@ -1,4 +1,8 @@
 RailsBestpracticesCom::Application.routes.draw do |map|
+  match "/tags/:id", :to => redirect("/tags/%{id}/posts")
+  resources :tags, :only => :show do
+    resources :posts
+  end
   resources :posts
 
   resource :account, :controller => 'users'
