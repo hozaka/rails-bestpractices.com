@@ -11,7 +11,7 @@ RailsBestpracticesCom::Application.routes.draw do |map|
 
   resource :user_session
 
-  root :to => 'home#show'
+  root :to => redirect("/posts?recent=true")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
