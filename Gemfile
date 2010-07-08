@@ -37,6 +37,7 @@ gem "inherited_resources", ">= 1.1.2"
 gem "exception_notification", :git => "git://github.com/rails/exception_notification.git"
 gem "acts-as-taggable-on", ">= 2.0.6"
 gem "rdiscount"
+gem "gravtastic", ">= 2.1.0"
 
 gem "mongrel", :group => :development
 gem "awesome_print", :require => 'ap', :group => :development

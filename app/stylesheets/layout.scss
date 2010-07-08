@@ -33,7 +33,7 @@ body {
     ul {
       @include float-right;
       @include no-bullets;
-      margin: 0;
+      margin: 0 1em;
       li {
         @include float-left;
         @include border-top-left-radius(0.5em);

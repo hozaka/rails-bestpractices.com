@@ -28,10 +28,14 @@ div.ac_results ul {
 }
 #content .command {
   @include float-right;
-  margin: 2em 1em 0 0;
+  margin: 1em 2em 0 0;
   a {
     @include inline-block;
   }
+}
+img.user-avatar {
+  @include float-right;
+  margin: 1em 2em 0 0;
 }
 
 .pagination {
@@ -63,13 +67,11 @@ body.bp, body.bp form.formtastic {
       font-style: italic;
     }
     h1 {
-      border-top: 4px solid #aaa;
       font-size: 170%;
       margin-top: 1.5em;
       padding-top: 0.5em;
     }
     h2 {
-      border-top: 4px solid #e0e0e0;
       font-size: 150%;
       margin-top: 1.5em;
       padding-top: 0.5em;
