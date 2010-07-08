@@ -12,10 +12,18 @@
     font-size: 1.2em;
     color: #111;
   }
+  p.inline-hints {
+    @include float-right;
+    margin: 0 12em 0 0
+  }
   #post_body_format_input ol li {
     @include float-left;
     margin-right: 1em;
   }
+}
+div.ac_results ul {
+  margin: 0;
+  padding: 0;
 }
 #content .command {
   @include float-right;
@@ -24,15 +32,78 @@
     @include inline-block;
   }
 }
-.wikistyle {
-  margin: 1em 2em;
-  pre code {
-    background-color: #F8F8FF;
-    border: medium none;
-    padding: 0;
+body.bp, body.bp form.formtastic {
+  .wikistyle {
+    strong {
+      font-weight: bold;
+    }
+    em {
+      font-style: italic;
+    }
+    h1 {
+      border-top: 4px solid #aaa;
+      font-size: 170%;
+      margin-top: 1.5em;
+      padding-top: 0.5em;
+    }
+    h2 {
+      border-top: 4px solid #e0e0e0;
+      font-size: 150%;
+      margin-top: 1.5em;
+      padding-top: 0.5em;
+    }
+    h3 {
+      margin-top: 1em;
+    }
+    p {
+      line-height: 1.5em;
+      margin: 1em 0;
+    }
+    ul {
+      margin: 1em 0 1em 2em;
+    }
+    ol {
+      margin: 1em 0 1em 2em;
+    }
+    ul ul, ul ol, ol ol, ol ul {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+    blockquote {
+      border-left: 5px solid #ddd;
+      color: #555;
+      margin: 1em 0;
+      padding-left: 0.6em;
+    }
+    pre {
+      background-color: #f8f8ff;
+      border: 1px solid #dedede;
+      color: #444;
+      font-size: 90%;
+      line-height: 1.5em;
+      margin: 1em 0;
+      overflow: auto;
+      padding: 0.5em;
+      code {
+        background-color: #f8f8ff;
+        border: medium none;
+        font-size: 100%;
+        padding: 0;
+      }
+    }
+    code {
+      background-color: #f8f8ff;
+      border: 1px solid #dedede;
+      color: #444444;
+      font-size: 90%;
+      padding: 0 0.2em;
+    }
   }
+}  
+body.bp .wikistyle {
+  margin: 1em 2em;
+}  
+body.bp form.formtastic .wikistyle {
+  margin: 1em 0;
 }
-div.ac_results ul {
-  margin: 0;
-  padding: 0;
-}
+

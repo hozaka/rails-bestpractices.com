@@ -46,7 +46,7 @@
     = javascript_include_tag 'jquery.autocomplete'
     :javascript
       $(function() {
-        $('#post_body_format_markdown').attr('checked', 'checked');
+        // tag list auto complete
         if (typeof tags != 'undefined') {
           $('#post_tag_list').autocomplete(tags, {
         		multiple: true,
@@ -54,4 +54,8 @@
         		autoFill: true
         	});
         }
+        // remove the beginning spaces in <pre><code> </code></pre>
+        $.each($('pre code'), function(i, element) {
+          $(element).text($(element).text().replace(/     /g, ''));
+        });
       });

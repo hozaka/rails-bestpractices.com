@@ -2,7 +2,7 @@
   .command
     = link_to 'Edit', edit_post_path(@post)
 %h2= @post.title
-.wikistyle= raw @post.body
+.wikistyle= raw @post.formatted_html
 .tags
   tags: 
   - @post.tags.each do |tag|

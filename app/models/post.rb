@@ -6,9 +6,16 @@ class Post < ActiveRecord::Base
   validates_presence_of :title, :body
   validates_uniqueness_of :title
   
+  before_save :generate_formatted_html
+  
   scope :recent, order('created_at desc')
   
   def belongs_to?(user)
-    user_id == user.id
+    user && user_id == user.id
   end
+  
+  private
+    def generate_formatted_html
+      self.formatted_html = RDiscount.new(body).to_html
+    end
 end
