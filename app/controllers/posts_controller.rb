@@ -7,4 +7,8 @@ class PostsController < InheritedResources::Base
     def begin_of_association_chain
       @current_user
     end
+    
+    def collection
+      @posts ||= end_of_association_chain.paginate(:page => params[:page])
+    end
 end

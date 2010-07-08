@@ -10,6 +10,10 @@ class Post < ActiveRecord::Base
   
   scope :recent, order('created_at desc')
   
+  def self.per_page
+    10
+  end
+  
   def belongs_to?(user)
     user && user_id == user.id
   end

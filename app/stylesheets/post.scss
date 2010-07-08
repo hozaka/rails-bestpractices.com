@@ -1,5 +1,6 @@
 @import "compass/utilities/links/link-colors";
 @import "compass/utilities/general/float";
+@import "compass/utilities/general/clearfix";
 @import "compass/css3/inline-block";
 
 .formtastic.post, .posts, .tags {
@@ -32,6 +33,27 @@ div.ac_results ul {
     @include inline-block;
   }
 }
+
+.pagination {
+  margin: 1em 2em;
+  @include clearfix;
+  span, a, em {
+    display: none;
+  }
+  .previous_page, .next_page {
+    @include inline-block;
+  }
+  .previous_page {
+    @include float-left;
+  }
+  .next_page {
+    @include float-right;
+  }
+  .disabled {
+    display: none;
+  }
+}
+
 body.bp, body.bp form.formtastic {
   .wikistyle {
     strong {

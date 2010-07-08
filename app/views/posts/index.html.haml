@@ -3,3 +3,4 @@
   - @posts.each do |post|
     .post
       .title= link_to post.title, post_path(post)
+= will_paginate @posts, :previous_label => "<< Newer", :next_label => "Older >>"
