@@ -38,6 +38,7 @@ gem "exception_notification", :git => "git://github.com/rails/exception_notifica
 gem "acts-as-taggable-on", ">= 2.0.6"
 gem "rdiscount"
 gem "gravtastic", ">= 2.1.0"
+gem "cancan"
 
 gem "mongrel", :group => :development
 gem "awesome_print", :require => 'ap', :group => :development
