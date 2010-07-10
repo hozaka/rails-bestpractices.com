@@ -11,6 +11,6 @@ class UserSessionsController < InheritedResources::Base
   def destroy
     current_user_session.destroy
     flash[:notice] = t('flash.user_sessions.destroy.notice')
-    redirect_back_or_default new_user_session_url
+    redirect_back_or_default root_url
   end
 end

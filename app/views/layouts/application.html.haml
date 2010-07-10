@@ -15,11 +15,11 @@
           %ul
             %li= link_to "Home", root_path
             - if !current_user
-              %li= link_to "Register", new_account_path
+              %li= link_to "Register", new_user_path
               %li= link_to "Log In", new_user_session_path
             - else
               %li= link_to 'Submit', new_post_path, :class => 'highlight'
-              %li= link_to current_user.login, account_path
+              %li= link_to current_user.login, edit_user_path(current_user)
               %li= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you want to logout?"
 
       .flash

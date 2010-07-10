@@ -7,9 +7,7 @@ RailsBestpracticesCom::Application.routes.draw do |map|
     get :archive, :on => :collection
   end
 
-  resource :account, :controller => 'users'
-
-  resources :users
+  resources :users, :only => [:new, :create, :edit, :update]
 
   resource :user_session
 

@@ -1,0 +1,9 @@
+%h2 Edit Your User Information
+
+= semantic_form_for @user do |form|
+  = form.inputs do
+    = form.input :login, :label => "Username"
+    = form.input :email, :hint => "This is used to show your avatar from gravatar.com."
+    = form.input :url, :label => "Your URL", :hint => "Note that this URL is linked from your username in various places around the site."
+  = form.buttons do
+    = form.commit_button "Save"

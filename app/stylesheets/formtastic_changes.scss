@@ -15,14 +15,25 @@ form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 form.formtastic fieldset > ol > li p.inline-errors {
   margin: 0;
 }
-form#new_user, form#new_user_session {
+form.formtastic fieldset > ol > li p.inline-hints {
+  margin: 0;
+}
+form.formtastic.user, form#new_user_session {
+  margin: 0 2em;
+  label, input {
+    float: none;
+    padding-left: 0;
+  }
   label {
-    margin-left: 10em;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 100%;
   }
   input {
     max-width: 13em;
   }
-  li.commit {
-    margin-left: 10em;
+  li.commit input {
+    padding: 0.2em 0.5em;
+    font-size: 1.2em;
   }
 }

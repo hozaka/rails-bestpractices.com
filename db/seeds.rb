@@ -2,7 +2,7 @@ Post.destroy_all
 User.destroy_all
 
 users = User.create([
-  {:login => 'flyerhzm', :email => 'flyerhzm@gmail.com', :password => 'flyerhzm', :password_confirmation => 'flyerhzm'},
+  {:login => 'flyerhzm', :email => 'flyerhzm@gmail.com', :url => 'http://www.huangzhimin.com', :password => 'flyerhzm', :password_confirmation => 'flyerhzm'},
   {:login => 'richard', :email => 'richard@ekohe.com', :password => 'richard', :password_confirmation => 'richard'}
 ])
 
