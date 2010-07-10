@@ -1,6 +1,7 @@
 class PostsController < InheritedResources::Base
   before_filter :require_user, :only => [:new, :edit, :create, :update, :destroy]
   belongs_to :tag, :optional => true, :class_name => 'ActsAsTaggableOn::Tag'
+  respond_to :xml, :atom, :only => :index
 
   def archive
     @posts = Post.all

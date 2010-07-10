@@ -6,6 +6,8 @@
     = stylesheet_link_tag 'compiled/print.css', :media => 'print'
     /[if IE]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
+    = auto_discovery_link_tag(:atom, posts_path(:format => 'atom'))
+    = auto_discovery_link_tag(:rss, posts_path(:format => 'xml'))
     = csrf_meta_tag
   %body.bp.two-col
     #container
@@ -32,7 +34,6 @@
             %li= link_to 'Recent Best Practices', posts_url
             %li= link_to 'All Best Practices', archive_posts_url
             %li= link_to 'About rails-bestpractices', '#'
-            %li= link_to 'Feed', '#'
         .section
           %h3 Tags
           %ul
