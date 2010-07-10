@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100710071623) do
+ActiveRecord::Schema.define(:version => 20100710151053) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20100710071623) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.text     "formatted_html"
+    t.text     "description"
   end
 
   create_table "taggings", :force => true do |t|

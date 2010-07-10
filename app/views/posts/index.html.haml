@@ -2,5 +2,10 @@
 .posts
   - @posts.each do |post|
     .post
-      .title= link_to post.title, post_path(post)
+      = image_tag post.user.gravatar_url(:size => 32), :class => 'user-avatar'
+      %span.title= link_to post.title, post_path(post)
+      %span.description= post.description
+      %p
+        by
+        = user_link(current_user)
 = will_paginate @posts, :previous_label => "<< Newer", :next_label => "Older >>"

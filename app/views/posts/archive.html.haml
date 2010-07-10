@@ -1,4 +1,5 @@
 %h2 All Rails Best Practices
-%ul.posts
+.posts.archive
   - @posts.each do |post|
-    %li= link_to post.title, post_path(post)
+    .post
+      .title= link_to post.title, post_path(post)
