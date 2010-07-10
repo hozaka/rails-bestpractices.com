@@ -23,6 +23,7 @@
               %li= link_to 'Submit', new_post_path, :class => 'highlight'
               %li= link_to current_user.login, edit_user_path(current_user)
               %li= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you want to logout?"
+            %li= link_to "About", '#'
 
       .flash
         - flash.each do |type, message|
@@ -33,11 +34,10 @@
           %ul
             %li= link_to 'Recent Best Practices', posts_url
             %li= link_to 'All Best Practices', archive_posts_url
-            %li= link_to 'About rails-bestpractices', '#'
         .section
           %h3 Tags
           %ul
-            - ActsAsTaggableOn::Tag.all.each do |tag|
+            - ActsAsTaggableOn::Tag.order("name").each do |tag|
               %li= link_to tag.name, tag_posts_path(tag)
       #content
         = yield
