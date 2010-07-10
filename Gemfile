@@ -5,7 +5,8 @@ gem 'rails', '3.0.0.beta4'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'sqlite3-ruby', :require => 'sqlite3', :group => :development
+gem 'mysql'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -38,8 +39,6 @@ gem "exception_notification", :git => "git://github.com/rails/exception_notifica
 gem "acts-as-taggable-on", ">= 2.0.6"
 gem "rdiscount"
 gem "gravtastic", ">= 2.1.0"
-
-gem "capistrano"
 
 gem "mongrel", :group => :development
 gem "awesome_print", :require => 'ap', :group => :development
