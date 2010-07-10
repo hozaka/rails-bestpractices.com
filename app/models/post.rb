@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   
   before_save :generate_formatted_html
   
-  scope :recent, order('created_at desc')
+  default_scope order('created_at desc')
   
   def self.per_page
     10

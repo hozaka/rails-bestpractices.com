@@ -3,7 +3,9 @@ RailsBestpracticesCom::Application.routes.draw do |map|
   resources :tags, :only => :show do
     resources :posts, :only => :index
   end
-  resources :posts
+  resources :posts do
+    get :archive, :on => :collection
+  end
 
   resource :account, :controller => 'users'
 
@@ -11,7 +13,7 @@ RailsBestpracticesCom::Application.routes.draw do |map|
 
   resource :user_session
 
-  root :to => redirect("/posts?recent=true")
+  root :to => redirect("/posts")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

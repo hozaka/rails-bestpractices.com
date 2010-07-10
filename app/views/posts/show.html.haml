@@ -1,8 +1,9 @@
 - if @post.belongs_to? current_user
   .command
     = link_to 'Edit', edit_post_path(@post)
-= image_tag @post.user.gravatar_url, :class => 'user-avatar'
 %h2= @post.title
+%p
+  = image_tag @post.user.gravatar_url(:size => 32), :class => 'user-avatar'
 .wikistyle= raw @post.formatted_html
 .tags
   tags: 
