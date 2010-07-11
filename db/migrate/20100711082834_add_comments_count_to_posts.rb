@@ -1,6 +1,6 @@
 class AddCommentsCountToPosts < ActiveRecord::Migration
   def self.up
-    add_column :posts, :comments_count, :integer
+    add_column :posts, :comments_count, :integer, :default => 0
   end
 
   def self.down

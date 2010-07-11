@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100711082834) do
+ActiveRecord::Schema.define(:version => 20100711092444) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -29,7 +29,8 @@ ActiveRecord::Schema.define(:version => 20100711082834) do
     t.integer  "user_id"
     t.text     "formatted_html"
     t.text     "description"
-    t.integer  "comments_count"
+    t.integer  "comments_count", :default => 0
+    t.integer  "vote_points",    :default => 0
   end
 
   create_table "taggings", :force => true do |t|
@@ -60,6 +61,14 @@ ActiveRecord::Schema.define(:version => 20100711082834) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "url"
+  end
+
+  create_table "votes", :force => true do |t|
+    t.boolean  "like"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

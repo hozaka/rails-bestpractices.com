@@ -9,5 +9,7 @@
         by
         = user_link(post.user)
         &nbsp;|&nbsp;
+        = "#{post.vote_points} votes"
+        &nbsp;|&nbsp;
         = link_to (post.comments.size == 0 ? "post a comment" : "#{post.comments.size} comments"), post_path(post, :anchor => 'comments')
 = will_paginate @posts, :previous_label => "<< Newer", :next_label => "Older >>"

@@ -21,6 +21,18 @@
   .vote-info, .post-info {
     @include float-left;
   }
+  .like-icon, .unlike-icon, .like-icon.active, unlike-icon.active {
+    border: none;
+    display: block;
+    text-indent: 9999px;
+    cursor: pointer;
+  }
+  .vote-info p {
+    width: 40px;
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+  }
   img.user-avatar {
     margin: 0 0.2em;
   }

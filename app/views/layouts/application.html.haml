@@ -33,6 +33,7 @@
           %h3 Navigation
           %ul
             %li= link_to 'Recent Best Practices', posts_url
+            %li= link_to 'Hot Best Practices', posts_url(:hot => true)
             %li= link_to 'All Best Practices', archive_posts_url
         .section
           %h3 Tags

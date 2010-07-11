@@ -5,8 +5,9 @@
     .command
       = link_to 'Edit', edit_post_path(@post)
   .vote-info
-    .like-icon
-    .unlike-icon
+    = vote_like_link(@post)
+    %p= @post.vote_points
+    = vote_unlike_link(@post)
   %p
     Posted by 
     = image_tag @post.user.gravatar_url(:size => 16), :class => 'user-avatar'
