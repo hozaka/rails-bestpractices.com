@@ -4,11 +4,6 @@ class PostsController < InheritedResources::Base
   has_scope :hot
   respond_to :xml, :atom, :only => :index
 
-  show! do |format|
-    @comment = Comment.new
-    format.html
-  end
-
   def archive
     @posts = Post.all
   end

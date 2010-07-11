@@ -28,22 +28,23 @@
     - unless @post.comments.empty?
       %h3 Comments
       - @post.comments.each do |comment|
-        .comment
-          %p
-            - if comment.user
-              = image_tag comment.user.gravatar_url(:size => 32), :class => 'user-avatar'
-            = comment.body
-          %p.info
-            = comment_user_link(comment)
-            &nbsp;-&nbsp;
-            = comment.created_at.strftime("%B %d, %Y %H:%M")
+        - unless comment.new_record?
+          .comment
+            %p
+              - if comment.user
+                = image_tag comment.user.gravatar_url(:size => 32), :class => 'user-avatar'
+              = raw comment.formatted_html
+            %p.info
+              = comment_user_link(comment)
+              &nbsp;-&nbsp;
+              = comment.created_at.strftime("%B %d, %Y %H:%M")
 
-  = semantic_form_for [@post, @comment] do |form|
+  = semantic_form_for [@post, @post.comments.build] do |form|
     = form.inputs :name => "Post a comment" do
       - if current_user
         = form.input :user_id, :as => :hidden, :value => current_user.id
       - else
-        = form.input :username
+        = form.input :username, :hint => "Note: if you a registered user, you can log in without input username."
       = form.input :body, :label => false
       .wmd-preview.wikistyle
     = form.buttons do

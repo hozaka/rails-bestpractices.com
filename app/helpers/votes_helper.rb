@@ -1,5 +1,8 @@
 module VotesHelper
   def vote_like_link(post)
+    unless current_user
+      return link_to_function('Like', "alert('You should log in before vote!')", :class => 'like-icon')
+    end
     vote = post.vote current_user
     if vote
       if vote.like?
@@ -13,6 +16,9 @@ module VotesHelper
   end
   
   def vote_unlike_link(post)
+    unless current_user
+      return link_to_function('Unlike', "alert('You should log in before vote!')", :class => 'unlike-icon')
+    end
     vote = post.vote current_user
     if vote
       if vote.like?

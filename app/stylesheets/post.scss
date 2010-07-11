@@ -51,6 +51,7 @@
     margin-top: 2em;
     .comment {
       @include clearfix;
+      background-color: #eee;
       p.info {
         @include float-right;
         clear: both;
