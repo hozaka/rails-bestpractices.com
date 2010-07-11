@@ -23,17 +23,19 @@
       = link_to tag.name, tag_posts_path(tag)
 
   .comments
-    %h3 Comments
-    - @post.comments.each do |comment|
-      .comment
-        %p
-          - if comment.user
-            = image_tag comment.user.gravatar_url(:size => 32), :class => 'user-avatar'
-          = comment.body
-        %p.info
-          = comment_user_link(comment)
-          &nbsp;-&nbsp;
-          = comment.created_at.strftime("%B %d, %Y %H:%M")
+    %a{:name => 'comments'}
+    - unless @post.comments.empty?
+      %h3 Comments
+      - @post.comments.each do |comment|
+        .comment
+          %p
+            - if comment.user
+              = image_tag comment.user.gravatar_url(:size => 32), :class => 'user-avatar'
+            = comment.body
+          %p.info
+            = comment_user_link(comment)
+            &nbsp;-&nbsp;
+            = comment.created_at.strftime("%B %d, %Y %H:%M")
 
   = semantic_form_for [@post, @comment] do |form|
     = form.inputs :name => "Post a comment" do
