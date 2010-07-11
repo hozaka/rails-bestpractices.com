@@ -7,3 +7,5 @@ public/stylesheets/compiled/**
 config/deploy.rb
 config/deploy/*.rb
 Capfile
+public/images/css_sprite.png
+app/stylesheets/css_sprite.scss

@@ -4,6 +4,9 @@
   - if @post.belongs_to? current_user
     .command
       = link_to 'Edit', edit_post_path(@post)
+  .vote-info
+    .like-icon
+    .unlike-icon
   %p
     Posted by 
     = image_tag @post.user.gravatar_url(:size => 16), :class => 'user-avatar'

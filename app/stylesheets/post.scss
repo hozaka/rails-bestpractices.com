@@ -18,6 +18,9 @@
 }
 .post {
   margin: 0 2em 1em;
+  .vote-info, .post-info {
+    @include float-left;
+  }
   img.user-avatar {
     margin: 0 0.2em;
   }

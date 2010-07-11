@@ -1,0 +1,3 @@
+engine: scss
+stylesheet_path: app/stylesheets
+disable_optimization: true
