@@ -3,5 +3,5 @@
 = semantic_form_for @post do |form|
   = render 'form', :f => form
   = form.buttons do
-    = form.commit_button
-    %li= link_to 'Back', post_path(@post)
+    = form.submit "Save"
+    = link_to 'Back', post_path(@post)

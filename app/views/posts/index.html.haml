@@ -7,5 +7,5 @@
       %span.description= post.description
       %p
         by
-        = user_link(current_user)
+        = user_link(post.user)
 = will_paginate @posts, :previous_label => "<< Newer", :next_label => "Older >>"

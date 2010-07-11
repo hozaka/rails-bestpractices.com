@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
   is_gravtastic!
   
   has_many :posts
+  has_many :comments
 end

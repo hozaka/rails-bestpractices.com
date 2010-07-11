@@ -7,7 +7,7 @@
   %p
     Posted by 
     = image_tag @post.user.gravatar_url(:size => 16), :class => 'user-avatar'
-    = user_link(current_user)
+    = user_link(@post.user)
     on 
     = @post.created_at.to_date.strftime("%B %d, %Y")
   %p
@@ -18,3 +18,31 @@
     %strong tags: 
     - @post.tags.each do |tag|
       = link_to tag.name, tag_posts_path(tag)
+
+  .comments
+    %h3 Comments
+    - @post.comments.each do |comment|
+      .comment
+        %p
+          - if comment.user
+            = image_tag comment.user.gravatar_url(:size => 32), :class => 'user-avatar'
+          = comment.body
+        %p.info
+          = comment_user_link(comment)
+          &nbsp;-&nbsp;
+          = comment.created_at.strftime("%B %d, %Y %H:%M")
+
+  = semantic_form_for [@post, @comment] do |form|
+    = form.inputs :name => "Post a comment" do
+      - if current_user
+        = form.input :user_id, :as => :hidden, :value => current_user.id
+      - else
+        = form.input :username
+      = form.input :body, :label => false
+      .wmd-preview.wikistyle
+    = form.buttons do
+      = form.submit "Comment"
+
+:javascript
+  wmd_options = {"output": "Markdown"};
+= javascript_include_tag 'wmd'

@@ -14,12 +14,6 @@
     .title {
       font-size: 1.2em;
     }
-    img.user-avatar {
-      @include float-right;
-      padding: 0.1em;
-      border: 1px solid #eee;
-      margin: 0.5em 0 0.5em 2em;
-    }
   }
 }
 .post {
@@ -37,6 +31,24 @@
       @include inline-block;
       font-size: 1.2em;
     }
+  }
+  .comments {
+    margin-top: 2em;
+    .comment {
+      @include clearfix;
+      p.info {
+        @include float-right;
+        clear: both;
+      }
+    }
+  }
+}
+.posts .post, .comments .comment {
+  img.user-avatar {
+    @include float-right;
+    padding: 0.1em;
+    border: 1px solid #eee;
+    margin: 0.5em 0 0.5em 2em;
   }
 }
 div.ac_results ul {

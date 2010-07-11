@@ -3,6 +3,11 @@ class PostsController < InheritedResources::Base
   belongs_to :tag, :optional => true, :class_name => 'ActsAsTaggableOn::Tag'
   respond_to :xml, :atom, :only => :index
 
+  show! do |format|
+    @comment = Comment.new
+    format.html
+  end
+
   def archive
     @posts = Post.all
   end

@@ -6,6 +6,7 @@ describe Post do
   end
   
   should_belong_to :user
+  should_have_many :comments
   should_validate_presence_of :title, :body
   should_validate_uniqueness_of :title
   

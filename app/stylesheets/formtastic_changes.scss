@@ -32,7 +32,7 @@ form.formtastic {
         width: 100%;
       }
     }
-    &.buttons > ol > li {
+    &.buttons {
       input {
         padding: 0.2em 0.5em;
         font-size: 1.2em;
@@ -43,5 +43,14 @@ form.formtastic {
         margin-left: 2em;
       }
     }
+  }
+}
+form#new_comment {
+  margin: 2em 0;
+  legend {
+    font-size: 1.5em;
+  }
+  textarea {
+    height: 10em;
   }
 }
