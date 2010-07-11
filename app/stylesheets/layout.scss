@@ -7,12 +7,19 @@
 @import "compass/css3/border-radius";
 @import "compass/css3/inline-block";
 
-body {
+body.bp {
   background-color: #EEE;
   color: #111;
   #container a {
     @include hover-link;
     @include link-colors(#2276BB);
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  a {
+    border: none;
+    outline: none;
   }
 }
 #header {
@@ -24,16 +31,26 @@ body {
       font-weight: bold;
     }
   }
+  .desc {
+    @include column(6);
+    margin-top: 1em;
+    p {
+      margin: 0;
+      color: #2276BB;
+      font-weight: bold;
+    }
+  }
   .nav {
     background-color: #fff;
     padding: 1em 0;
-    @include column(15);
+    @include column(9);
     @include last;
     @include border-radius(1em);
     ul {
       @include float-right;
       @include no-bullets;
       margin: 0 1em;
+      padding: 0;
       li {
         @include float-left;
         @include border-top-left-radius(0.5em);
@@ -73,7 +90,7 @@ body {
     @include no-bullets;
     li {
       a {
-        font-size: 1em;
+        font-size: 1.2em;
       }
     }
   }
