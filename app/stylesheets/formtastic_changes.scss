@@ -54,3 +54,10 @@ form#new_comment {
     height: 10em;
   }
 }
+form#new_user_session, form#new_user {
+  margin: 2em;
+  input[type=text], input[type=password] {
+    width: 15em;
+    max-width:15em;
+  }
+}

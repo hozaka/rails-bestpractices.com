@@ -2,7 +2,7 @@
 
 = semantic_form_for @user_session, :url => user_session_path do |form|
   = form.inputs do
-    = form.input :login
+    = form.input :login, :label => "Username"
     = form.input :password
     = form.input :remember_me, :as => :boolean
   = form.buttons do
