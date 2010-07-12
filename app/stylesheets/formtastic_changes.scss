@@ -54,7 +54,7 @@ form#new_comment {
     height: 10em;
   }
 }
-form#new_user_session, form#new_user {
+form.formtastic.user_session, form.formtastic.user {
   margin: 2em;
   input[type=text], input[type=password] {
     width: 15em;

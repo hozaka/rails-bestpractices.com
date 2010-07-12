@@ -1,4 +1,5 @@
 class VotesController < InheritedResources::Base
+  before_filter :require_user
   actions :create, :destroy
   belongs_to :post
 
