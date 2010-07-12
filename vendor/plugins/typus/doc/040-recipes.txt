@@ -1,0 +1,15 @@
+== Recipes ==
+
+Here's a list of recipes suggested by some of developers.
+
+include::041-recipes-rich-text-editor.txt[]
+
+include::042-recipes-custom-actions.txt[]
+
+include::043-recipes-sti.txt[]
+
+include::044-recipes-namespaced-models.txt[]
+
+include::045-recipes-configuration-files.txt[]
+
+include::046-recipes-testing-the-plugin.txt[]

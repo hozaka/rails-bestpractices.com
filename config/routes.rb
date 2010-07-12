@@ -1,4 +1,6 @@
 RailsBestpracticesCom::Application.routes.draw do |map|
+  Typus::Routes.draw(map)
+
   match "/tags/:id", :to => redirect("/tags/%{id}/posts")
   resources :tags, :only => :show do
     resources :posts, :only => :index

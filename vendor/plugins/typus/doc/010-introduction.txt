@@ -1,0 +1,35 @@
+== Introduction ==
+
+A few years ago I developed websites using http://movabletype.org/[Movable Type], 
+http://drupal.com/[Drupal], http://textpattern.com/[TextPattern] and 
+http://b2evolution.net/[b2], which later became http://wordpress.org/[Wordpress]. 
+I decided to stop using all those content management systems and 
+started to develop web applications with http://rubyonrails.org/[Ruby on Rails].
+
+Inspired by the tools I used, and with a simple idea "Trusted users 
+editing structured content", I started to develop a 
+http://rubyonrails.org/[Rails] application to manage the sites I was 
+building. This was the first attempt to make a simple but powerful 
+content management system. I adapted that application to many 
+projects, but I decided to extract the core functionality as a plugin 
+which is now known a **Typus**.
+
+// image:http://media.intraducibles.com/assets/typus-screenshots-step2.png[Typus: Dashboard]
+
+On December 2007, **Typus** was released under a xref:mit-license[MIT License].
+
+=== Key Features ===
+
+- CRUD and custom actions for your models on a clean interface.
+- Access control by users and roles.
+- Internationalized interface.
+- Extensible and overwritable templates.
+- Low memory footprint.
+- Easily manage your data, search, sort and filter.
+- Ruby 1.9 compatible.
+- Supports ActiveRecord.
+- Supports *Rails 3.0.0.beta3*.
+- Tested with *SQLite*, *MySQL* and *PostgreSQL*.
+- xref:mit-license[MIT License], the same as Rails.
+
+IMPORTANT: Master branch is only compatible with *Rails 3.0.0.beta3*.

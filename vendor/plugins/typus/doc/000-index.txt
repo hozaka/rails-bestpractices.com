@@ -1,0 +1,27 @@
+= Typus: Admin Panel for Ruby on Rails Applications =
+
+include::010-introduction.txt[]
+
+include::011-introduction-demo.txt[]
+
+include::020-installation.txt[]
+
+include::030-configuration.txt[]
+
+include::031-configuration-resources.txt[]
+
+include::032-configuration-resource.txt[]
+
+include::033-configuration-roles.txt[]
+
+include::034-configuration-ui.txt[]
+
+include::040-recipes.txt[]
+
+include::050-contribute.txt[]
+
+include::060-services.txt[]
+
+include::070-known-issues.txt[]
+
+include::100-mit-license.txt[]

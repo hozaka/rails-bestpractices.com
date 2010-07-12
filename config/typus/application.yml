@@ -1,0 +1,44 @@
+# Typus Models Configuration File
+#
+# Use the README file as a reference to customize settings.
+
+Comment:
+  fields:
+    default: commentable_id, user_id, username, user
+    form: body, commentable_id, user_id, username, user
+  order_by: 
+  relationships: user
+  filters: 
+  search: 
+  application: rails-bestpractices.com
+
+Post:
+  fields:
+    default: title, user_id, comments_count, vote_points, user
+    form: title, body, user_id, formatted_html, description, comments_count, vote_points, user
+  order_by: 
+  relationships: base_tags, comments, tag_taggings, taggings, tags, user, votes
+  filters: 
+  search: title
+  application: rails-bestpractices.com
+
+User:
+  fields:
+    default: login, email, url
+    form: login, email, url
+  order_by: 
+  relationships: comments, posts, votes
+  filters: 
+  search: 
+  application: rails-bestpractices.com
+
+Vote:
+  fields:
+    default: like, user_id, post_id, post, user
+    form: like, user_id, post_id, post, user
+  order_by: 
+  relationships: post, user
+  filters: 
+  search: 
+  application: rails-bestpractices.com
+
