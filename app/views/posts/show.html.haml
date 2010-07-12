@@ -21,7 +21,7 @@
     on 
     = @post.created_at.to_date.strftime("%B %d, %Y")
   %p
-    = render 'shared/add_this'
+    = render 'shared/add_this_link'
   %p
     %strong Short Description: 
     = @post.description
@@ -35,3 +35,5 @@
 
   = render 'comments/comments', :parent => @post
   = render 'comments/comment_form', :parent => @post
+
+= render 'shared/add_this_script'
