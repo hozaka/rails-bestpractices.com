@@ -1,0 +1,15 @@
+.comments
+  %a{:name => 'comments'}
+  - unless parent.comments.empty?
+    %h3 Comments
+    - parent.comments.each do |comment|
+      - unless comment.new_record?
+        .comment
+          %p
+            - if comment.user
+              = image_tag comment.user.gravatar_url(:size => 32), :class => 'user-avatar'
+            = comment.body
+          %p.info
+            = comment_user_link(comment)
+            &nbsp;-&nbsp;
+            = comment.created_at.strftime("%B %d, %Y %H:%M")

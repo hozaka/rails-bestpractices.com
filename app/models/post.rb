@@ -1,14 +1,14 @@
 class Post < ActiveRecord::Base
+  include Markdownable
   acts_as_taggable
   
   belongs_to :user
   has_many :comments, :as => :commentable, :dependent => :destroy
   has_many :votes, :dependent => :destroy
+  has_one :implementation, :dependent => :destroy
   
   validates_presence_of :title, :body
   validates_uniqueness_of :title
-  
-  before_save :generate_formatted_html
   
   default_scope order('created_at desc')
   with_exclusive_scope do
@@ -26,9 +26,4 @@ class Post < ActiveRecord::Base
   def vote(user)
     self.votes.where(:user_id => user.id).first
   end
-  
-  private
-    def generate_formatted_html
-      self.formatted_html = RDiscount.new(body).to_html
-    end
 end

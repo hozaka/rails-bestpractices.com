@@ -9,6 +9,10 @@ RailsBestpracticesCom::Application.routes.draw do |map|
     get :archive, :on => :collection
     resources :comments, :only => :create
     resources :votes, :only => [:create, :destroy]
+    resources :implementation, :only => [:show, :new, :create, :edit, :update]
+  end
+  resources :implementations do
+    resources :comments, :only => :create
   end
 
   resources :users, :only => [:new, :create, :edit, :update]

@@ -2,6 +2,16 @@
 #
 # Use the README file as a reference to customize settings.
 
+AdminUser:
+  fields:
+    default: first_name, last_name, role, email, status, token, preferences
+    form: first_name, last_name, role, email, status, token, preferences
+  order_by: 
+  relationships: 
+  filters: 
+  search: 
+  application: rails-bestpractices.com
+
 Comment:
   fields:
     default: commentable_id, user_id, username, user
@@ -12,22 +22,32 @@ Comment:
   search: 
   application: rails-bestpractices.com
 
+Implementation:
+  fields:
+    default: post_id, user_id, post, user
+    form: post_id, user_id, body, formatted_html, post, user
+  order_by: 
+  relationships: post, user
+  filters: 
+  search: 
+  application: rails-bestpractices.com
+
 Post:
   fields:
     default: title, user_id, comments_count, vote_points, user
     form: title, body, user_id, formatted_html, description, comments_count, vote_points, user
   order_by: 
-  relationships: base_tags, comments, tag_taggings, taggings, tags, user, votes
+  relationships: base_tags, comments, implementable, tag_taggings, taggings, tags, user, votes
   filters: 
   search: title
   application: rails-bestpractices.com
 
 User:
   fields:
-    default: login, email, url
-    form: login, email, url
+    default: login, email, url, developer
+    form: login, email, url, developer
   order_by: 
-  relationships: comments, posts, votes
+  relationships: comments, implementations, posts, votes
   filters: 
   search: 
   application: rails-bestpractices.com

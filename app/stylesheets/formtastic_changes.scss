@@ -12,6 +12,8 @@ The following style may be *conditionally* included for improved support on olde
 form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 
 --------------------------------------------------------------------------------------------------*/
+@import "partials/wikistyle";
+
 form.formtastic {
   margin: 0 2em;
   fieldset {
@@ -54,7 +56,7 @@ form#new_comment {
     height: 10em;
   }
 }
-form#new_post {
+form.post, form.implementation {
   margin: 2em;
 }
 form.formtastic.user_session, form.formtastic.user {
@@ -63,4 +65,14 @@ form.formtastic.user_session, form.formtastic.user {
     width: 15em;
     max-width:15em;
   }
+}
+
+body.bp, body.bp form.formtastic {
+  .wikistyle {
+    @include wikistyle;
+  }
+}  
+body.bp form.formtastic .wmd-preview {
+  border: 1px dotted #111;
+  min-height: 2em;
 }

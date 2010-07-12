@@ -1,5 +1,4 @@
 @import "partials/pagination";
-@import "partials/wikistyle";
 @import "compass/utilities/general/float";
 @import "compass/css3/inline-block";
 @import "compass/css3/border-radius";
@@ -37,6 +36,12 @@
   img.user-avatar {
     margin: 0 0.2em;
   }
+  .implemented {
+    background-color: #eee;
+    padding: 0.2em 0.5em;
+    @include border-radius(0.5em);
+    @include float-right;
+  }
   .tags {
     font-size: 1.2em;
   }
@@ -48,22 +53,8 @@
       font-size: 1.2em;
     }
   }
-  .comments {
-    margin-top: 2em;
-    .comment {
-      background-color: #eee;
-      padding: 1em 1em 0 1em;
-      margin: 1em 0;
-      @include clearfix;
-      @include border-radius(1em);
-      p.info {
-        @include float-right;
-        clear: both;
-      }
-    }
-  }
 }
-.posts .post, .comments .comment {
+.posts .post {
   img.user-avatar {
     @include float-right;
     padding: 0.1em;
@@ -78,14 +69,4 @@ div.ac_results ul {
 
 .pagination {
   @include pagination;
-}
-
-body.bp, body.bp form.formtastic {
-  .wikistyle {
-    @include wikistyle;
-  }
-}  
-body.bp form.formtastic .wmd-preview {
-  border: 1px dotted #111;
-  min-height: 2em;
 }

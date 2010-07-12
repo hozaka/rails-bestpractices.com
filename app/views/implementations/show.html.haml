@@ -1,0 +1,15 @@
+%h2 
+  Implementation for 
+  = link_to @post.title, post_path(@post)
+
+.implementation
+  %p
+    Posted by 
+    = image_tag @implementation.user.gravatar_url(:size => 16), :class => 'user-avatar'
+    = user_link(@implementation.user)
+    on 
+    = @implementation.created_at.to_date.strftime("%B %d, %Y")
+  .wikistyle= raw @implementation.formatted_html
+
+  = render 'comments/comments', :parent => @implementation
+  = render 'comments/comment_form', :parent => @implementation

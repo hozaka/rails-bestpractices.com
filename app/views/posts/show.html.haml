@@ -4,6 +4,12 @@
   - if @post.belongs_to? current_user
     .command
       = link_to 'Edit', edit_post_path(@post)
+      - if current_user and current_user.developer?
+        &nbsp;|&nbsp;
+        - if @post.implementation
+          = link_to 'Edit Implementation', edit_post_implementation_path(@post, @post.implementation)
+        - else
+          = link_to 'New Implement', new_post_implementation_path(@post)
   .vote-info
     = vote_like_link(@post)
     %p= @post.vote_points
@@ -20,33 +26,12 @@
     %strong Short Description: 
     = @post.description
   .wikistyle= raw @post.formatted_html
+  - if @post.implementation
+    = link_to 'Implemented in rails_best_practices gem', post_implementation_path(@post, @post.implementation), :class => 'implemented'
   .tags
     %strong tags: 
     - @post.tags.each do |tag|
       = link_to tag.name, tag_posts_path(tag)
 
-  .comments
-    %a{:name => 'comments'}
-    - unless @post.comments.empty?
-      %h3 Comments
-      - @post.comments.each do |comment|
-        - unless comment.new_record?
-          .comment
-            %p
-              - if comment.user
-                = image_tag comment.user.gravatar_url(:size => 32), :class => 'user-avatar'
-              = comment.body
-            %p.info
-              = comment_user_link(comment)
-              &nbsp;-&nbsp;
-              = comment.created_at.strftime("%B %d, %Y %H:%M")
-
-  = semantic_form_for [@post, @post.comments.build] do |form|
-    = form.inputs :name => "Post a comment" do
-      - if current_user
-        = form.input :user_id, :as => :hidden, :value => current_user.id
-      - else
-        = form.input :username, :hint => "Note: if you a registered user, you can log in without input username."
-      = form.input :body, :label => false
-    = form.buttons do
-      = form.submit "Comment"
+  = render 'comments/comments', :parent => @post
+  = render 'comments/comment_form', :parent => @post

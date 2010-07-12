@@ -8,6 +8,7 @@ describe Post do
   should_belong_to :user
   should_have_many :comments
   should_have_many :votes
+  should_have_one :implementation
   should_validate_presence_of :title, :body
   should_validate_uniqueness_of :title
   

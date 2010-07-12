@@ -4,6 +4,7 @@ describe User do
   should_have_many :posts
   should_have_many :comments
   should_have_many :votes
+  should_have_many :implementations
   
   it "should succeed creating a new :valid_user from the Factory" do
     Factory.create(:user_flyerhzm)
