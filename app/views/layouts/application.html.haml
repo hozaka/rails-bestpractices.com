@@ -61,6 +61,10 @@
         }
         // remove the beginning spaces in <pre><code> </code></pre>
         $.each($('pre code'), function(i, element) {
-          $(element).text($(element).text().replace(/     /g, ''));
+          var output = [];
+          $.each($(element).text().split('\n'), function(i, line) {
+            output.push(line.replace(/^ {12}/, ''));
+          });
+          $(element).text(output.join('\n'));
         });
       });
