@@ -33,7 +33,7 @@
             %p
               - if comment.user
                 = image_tag comment.user.gravatar_url(:size => 32), :class => 'user-avatar'
-              = raw comment.formatted_html
+              = comment.body
             %p.info
               = comment_user_link(comment)
               &nbsp;-&nbsp;
@@ -46,10 +46,5 @@
       - else
         = form.input :username, :hint => "Note: if you a registered user, you can log in without input username."
       = form.input :body, :label => false
-      .wmd-preview.wikistyle
     = form.buttons do
       = form.submit "Comment"
-
-:javascript
-  wmd_options = {"output": "Markdown"};
-= javascript_include_tag 'wmd'
