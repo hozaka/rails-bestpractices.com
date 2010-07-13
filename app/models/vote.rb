@@ -8,17 +8,17 @@ class Vote < ActiveRecord::Base
   private
     def update_create_vote
       if like?
-        post.increment!(:vote_points, 1)
+        post.increment!(:vote_points)
       else
-        post.decrement!(:vote_points, 1)
+        post.decrement!(:vote_points)
       end
     end
 
     def update_destroy_vote
       if like?
-        post.decrement!(:vote_points, 1)
+        post.decrement!(:vote_points)
       else
-        post.increment!(:vote_points, 1)
+        post.increment!(:vote_points)
       end
     end
 end

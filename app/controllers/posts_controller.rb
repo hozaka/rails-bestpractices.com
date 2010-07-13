@@ -4,6 +4,10 @@ class PostsController < InheritedResources::Base
   has_scope :hot
   respond_to :xml, :atom, :only => :index
 
+  show! do |format|
+    @post.increment!(:view_count)
+  end
+  
   def archive
     @posts = Post.all
   end
