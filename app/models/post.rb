@@ -26,4 +26,8 @@ class Post < ActiveRecord::Base
   def vote(user)
     self.votes.where(:user_id => user.id).first
   end
+  
+  def to_param
+    return "#{id}-#{title.parameterize}"
+  end
 end
