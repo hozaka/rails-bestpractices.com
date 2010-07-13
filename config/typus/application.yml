@@ -31,6 +31,16 @@ Implementation:
   filters: 
   search: 
   application: rails-bestpractices.com
+  
+Page:
+  fields:
+    default: name
+    form: name, body
+  order_by:
+  redlationships:
+  filters:
+  search:
+  application: rails-bestpractices.com
 
 Post:
   fields:

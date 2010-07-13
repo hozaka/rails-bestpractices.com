@@ -6,6 +6,7 @@ admin:
   AdminUser: create, read, update, delete
   Comment: create, read, update, delete
   Implementation: create, read, update, delete
+  Page: create, read, update, delete
   Post: create, read, update, delete
   User: create, read, update, delete
   Vote: create, read, update, delete

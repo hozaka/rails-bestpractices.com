@@ -1,0 +1,11 @@
+<% content_for :javascripts do %>
+  <%= javascript_include_tag "ckeditor/ckeditor" %>
+  <script type="text/javascript">
+    $(function() {
+      if ($('textarea').length > 0) {
+        var data = $('textarea');
+        $.each(data, function(i) { CKEDITOR.replace(data[i].id); });
+      }
+    });
+  </script>
+<% end %>

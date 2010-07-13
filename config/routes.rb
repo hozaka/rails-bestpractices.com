@@ -18,6 +18,8 @@ RailsBestpracticesCom::Application.routes.draw do |map|
   resources :users, :only => [:new, :create, :edit, :update]
 
   resource :user_session
+  
+  match 'page/:name' => 'pages#show', :as => :page
 
   root :to => "posts#index"
 
