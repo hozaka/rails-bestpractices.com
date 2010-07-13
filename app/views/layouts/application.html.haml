@@ -45,7 +45,7 @@
           %h3 Tags
           %ul
             - ActsAsTaggableOn::Tag.order("name").each do |tag|
-              %li= link_to tag.name, tag_posts_path(tag)
+              %li= link_to tag.name, tag_path(tag.name)
       #content
         = yield
       #footer
