@@ -12,6 +12,11 @@ class PostsController < InheritedResources::Base
     @posts = Post.all
   end
   
+  def search
+    @posts = Post.where(['title like ?', "%#{params[:q]}%"]).paginate(:page => params[:page])
+    render :action => :index
+  end
+  
   protected
     def begin_of_association_chain
       @current_user

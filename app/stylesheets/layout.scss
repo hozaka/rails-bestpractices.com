@@ -1,5 +1,6 @@
 @import "blueprint";
 @import "compass/utilities/lists/bullets";
+@import "compass/utilities/lists/horizontal-list";
 @import "compass/utilities/links/hover-link";
 @import "compass/utilities/links/link-colors";
 @import "compass/utilities/general/float";
@@ -24,35 +25,31 @@ body.bp {
 }
 #header {
   margin: 2em 0;
-  > h1 {
-    @include column(9);
-    a {
-      @include link-colors(#111);
+  .logo {
+    @include column(11);
+    h1 {
       font-weight: bold;
+      margin-bottom: 0;
     }
-  }
-  .desc {
-    @include column(6);
-    margin-top: 1em;
     p {
       margin: 0;
-      color: #2276BB;
       font-weight: bold;
+      @include float-right;
     }
   }
   .nav {
     background-color: #fff;
     padding: 1em 0;
-    @include column(9);
+    @include column(13);
     @include last;
     @include border-radius(1em);
     ul {
       @include float-right;
       @include no-bullets;
+      @include horizontal-list;
       margin: 0 1em;
       padding: 0;
       li {
-        @include float-left;
         @include border-top-left-radius(0.5em);
         @include border-top-right-radius(0.5em);
         a {
@@ -66,6 +63,13 @@ body.bp {
             @include link-colors(#FFCC00);
           }
         }
+      }
+    }
+    form {
+      @include float-right;
+      margin: 0.5em 1em 0;
+      label {
+        margin: 0 0.2em;
       }
     }
   }
